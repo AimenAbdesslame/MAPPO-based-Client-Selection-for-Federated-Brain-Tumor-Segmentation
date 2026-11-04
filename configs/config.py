@@ -78,6 +78,7 @@ MODALITIES = CFG["dataset"]["modalities"]  # {"FLAIR": 0, "T1": 1, ...}
 # ==========================================
 SEED = CFG["split"]["seed"]
 SPLIT_COUNTS = (CFG["split"]["train"], CFG["split"]["val"], CFG["split"]["test"])
+N_TRAIN, N_VAL, N_TEST = SPLIT_COUNTS
 
 CLIENT_NAMES = CFG["clients"]["names"]
 CLIENT_PROPORTIONS = CFG["clients"]["proportions"]
