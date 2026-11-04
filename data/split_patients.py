@@ -11,7 +11,7 @@ from data.verify_dataset import index_tars, REQUIRED
 
 #Block 2: get the pool. Complete patients only, sorted so the result doesn’t depend on tar order.
 def get_pool():
-    patients, _ = index_tars(require_data_dir())
+    patients, _, _ = index_tars(require_data_dir())
     return sorted(p for p, f in patients.items() if REQUIRED <= set(f))
 
 

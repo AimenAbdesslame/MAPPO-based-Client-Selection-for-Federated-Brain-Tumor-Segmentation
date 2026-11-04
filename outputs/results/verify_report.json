@@ -1,0 +1,185 @@
+{
+  "n_patients": 1251,
+  "n_complete": 1251,
+  "n_unexpected_files": 1,
+  "unexpected_files": [
+    "BraTS2021_Training_Data.tar:./.DS_Store"
+  ],
+  "duplicates": [
+    "BraTS2021_00495:flair",
+    "BraTS2021_00495:seg",
+    "BraTS2021_00495:t1",
+    "BraTS2021_00495:t1ce",
+    "BraTS2021_00495:t2",
+    "BraTS2021_00621:flair",
+    "BraTS2021_00621:seg",
+    "BraTS2021_00621:t1",
+    "BraTS2021_00621:t1ce",
+    "BraTS2021_00621:t2"
+  ],
+  "sample_size": 20,
+  "n_issues": 0,
+  "issues": [],
+  "sample_stats": {
+    "BraTS2021_00320": {
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "wt_voxels": 39411
+    },
+    "BraTS2021_00077": {
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "wt_voxels": 197218
+    },
+    "BraTS2021_00807": {
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "wt_voxels": 143608
+    },
+    "BraTS2021_00715": {
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "wt_voxels": 66459
+    },
+    "BraTS2021_00646": {
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "wt_voxels": 125195
+    },
+    "BraTS2021_00403": {
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "wt_voxels": 35546
+    },
+    "BraTS2021_00296": {
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "wt_voxels": 33412
+    },
+    "BraTS2021_01532": {
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "wt_voxels": 183843
+    },
+    "BraTS2021_00251": {
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "wt_voxels": 10008
+    },
+    "BraTS2021_01625": {
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "wt_voxels": 164812
+    },
+    "BraTS2021_01280": {
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "wt_voxels": 170359
+    },
+    "BraTS2021_00099": {
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "wt_voxels": 83944
+    },
+    "BraTS2021_00095": {
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "wt_voxels": 236428
+    },
+    "BraTS2021_00271": {
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "wt_voxels": 151279
+    },
+    "BraTS2021_00628": {
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "wt_voxels": 55153
+    },
+    "BraTS2021_00679": {
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "wt_voxels": 173503
+    },
+    "BraTS2021_01450": {
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "wt_voxels": 89516
+    },
+    "BraTS2021_01648": {
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "wt_voxels": 164161
+    },
+    "BraTS2021_00084": {
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "wt_voxels": 67070
+    },
+    "BraTS2021_01565": {
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "wt_voxels": 138820
+    }
+  }
+}
