@@ -1,0 +1,49 @@
+# ── Default paths (relative to project root; override via env vars or environments section) ──
+paths:
+  brats_data_dir: null                                      # set via BRATS_DATA_DIR env var
+  output_dir: outputs
+  nnunet_raw: outputs/nnunet/nnUNet_raw
+  nnunet_preprocessed: outputs/nnunet/nnUNet_preprocessed
+  nnunet_results: outputs/nnunet/nnUNet_results
+
+# ── Per-environment path overrides ──
+environments:
+  local:                                                    # Windows / Linux dev machine
+    brats_data_dir: null
+    output_dir: outputs
+    nnunet_raw: outputs/nnunet/nnUNet_raw
+    nnunet_preprocessed: outputs/nnunet/nnUNet_preprocessed
+    nnunet_results: outputs/nnunet/nnUNet_results
+
+  kaggle:                                                   # Kaggle kernel; brats_data_dir via env var
+    brats_data_dir: null
+    output_dir: /kaggle/working/outputs
+    nnunet_raw: /kaggle/working/nnunet/nnUNet_raw
+    nnunet_preprocessed: /kaggle/working/nnunet/nnUNet_preprocessed
+    nnunet_results: /kaggle/working/nnunet/nnUNet_results
+
+# ── BraTS dataset metadata ──
+dataset:
+  dataset_id: 501
+  dataset_name: BraTS
+  modalities:
+    FLAIR: 0
+    T1: 1
+    T1ce: 2
+    T2: 3
+  # Binary whole-tumour label: binary_label = (seg > 0).astype(uint8)
+  label_rule: binary_wt
+
+# ── Patient-level train / val / test split ──
+split:
+  train: 0.70
+  val: 0.15
+  test: 0.15
+  seed: 42
+
+# ── Federated clients ──
+clients:
+  names: [A, B, C, D]
+  proportions: [0.35, 0.30, 0.20, 0.15]       # fraction of training data per client
+  cost_multipliers: [1.0, 1.5, 2.0, 3.0]      # relative communication cost per client
+
