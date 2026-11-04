@@ -77,13 +77,12 @@ MODALITIES = CFG["dataset"]["modalities"]  # {"FLAIR": 0, "T1": 1, ...}
 # 4. SPLIT & CLIENTS
 # ==========================================
 SEED = CFG["split"]["seed"]
-SPLIT_RATIOS = (CFG["split"]["train"], CFG["split"]["val"], CFG["split"]["test"])
+SPLIT_COUNTS = (CFG["split"]["train"], CFG["split"]["val"], CFG["split"]["test"])
 
 CLIENT_NAMES = CFG["clients"]["names"]
 CLIENT_PROPORTIONS = CFG["clients"]["proportions"]
 CLIENT_COSTS = CFG["clients"]["cost_multipliers"]
 
 # The only checks worth keeping: a typo here silently ruins every experiment
-assert abs(sum(SPLIT_RATIOS) - 1.0) < 1e-6, "split ratios must sum to 1"
 assert abs(sum(CLIENT_PROPORTIONS) - 1.0) < 1e-6, "client proportions must sum to 1"
 assert len(CLIENT_NAMES) == len(CLIENT_PROPORTIONS) == len(CLIENT_COSTS)

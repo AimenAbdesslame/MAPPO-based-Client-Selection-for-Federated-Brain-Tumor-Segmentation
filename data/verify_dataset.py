@@ -19,6 +19,7 @@ VALID_LABELS = {0, 1, 2, 4}
 def index_tars(data_dir):
     patients = defaultdict(lambda: defaultdict(list))
     unexpected = []
+    duplicates = []
     for tar_path in sorted(Path(data_dir).glob("*.tar")):
         with tarfile.open(tar_path, "r:") as tf:
             for m in tf.getmembers():
@@ -27,10 +28,13 @@ def index_tars(data_dir):
                 match = PATTERN.search(m.name)
                 if match:
                     pid, kind = match.groups()
-                    patients[pid][kind].append((tar_path, m.name))
+                    if patients[pid][kind]:
+                        duplicates.append(f"{pid}:{kind}")      # keep the first copy, log the rest
+                    else:
+                        patients[pid][kind].append((tar_path, m.name))
                 else:
                     unexpected.append(f"{tar_path.name}:{m.name}")
-    return patients, unexpected
+    return patients ,unexpected , duplicates
 
 
 
@@ -101,7 +105,7 @@ def main():
     args = ap.parse_args()
 
     data_dir = require_data_dir()
-    patients, unexpected = index_tars(data_dir)
+    patients, unexpected, duplicates = index_tars(data_dir)
     print(f"Patients indexed: {len(patients)}")
 
     issues = check_structure(patients)
@@ -122,6 +126,7 @@ def main():
         "n_complete": len(complete),
         "n_unexpected_files": len(unexpected),
         "unexpected_files": unexpected[:20],
+        "duplicates" : duplicates[:20] , #duplicates    
         "sample_size": len(sample),
         "n_issues": len(issues),
         "issues": issues,

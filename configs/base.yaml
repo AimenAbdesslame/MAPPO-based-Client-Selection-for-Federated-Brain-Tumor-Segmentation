@@ -36,9 +36,9 @@ dataset:
 
 # ── Patient-level train / val / test split ──
 split:
-  train: 0.70
-  val: 0.15
-  test: 0.15
+  train: 280
+  val: 60
+  test: 60
   seed: 42
 
 # ── Federated clients ──
