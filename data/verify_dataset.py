@@ -50,6 +50,7 @@ def check_structure(patients):
 
 #Block 4: Extract a sample to a temp folder
 def extract_patient(files, out_dir):
+    Path(out_dir).mkdir(parents=True, exist_ok=True)
     """files = patients[pid]; writes the 5 files to out_dir, returns {kind: path}."""
     paths = {}
     for kind in REQUIRED:
@@ -58,7 +59,7 @@ def extract_patient(files, out_dir):
         with tarfile.open(tar_path, "r:") as tf, open(dest, "wb") as out:
             out.write(tf.extractfile(member).read())
         paths[kind] = dest
-    Path(out_dir).mkdir(parents=True, exist_ok=True)
+    
     return paths
 
 
