@@ -46,4 +46,11 @@ clients:
   names: [A, B, C, D]
   proportions: [0.35, 0.30, 0.20, 0.15]       # fraction of training data per client
   cost_multipliers: [1.0, 1.5, 2.0, 3.0]      # relative communication cost per client
+  # Mild quartile-mix: rows=clients A/B/C/D, cols=volume quartiles Q1(small)..Q4(large)
+  # Each row sums to 1.0 and differs enough to create mild heterogeneity
+  quartile_mix:
+    - [0.20, 0.40, 0.30, 0.10]   # A: medium-leaning
+    - [0.40, 0.30, 0.20, 0.10]   # B: small-leaning
+    - [0.10, 0.20, 0.30, 0.40]   # C: large-leaning
+    - [0.25, 0.25, 0.25, 0.25]   # D: mixed
 

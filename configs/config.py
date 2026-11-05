@@ -87,3 +87,5 @@ CLIENT_COSTS = CFG["clients"]["cost_multipliers"]
 # The only checks worth keeping: a typo here silently ruins every experiment
 assert abs(sum(CLIENT_PROPORTIONS) - 1.0) < 1e-6, "client proportions must sum to 1"
 assert len(CLIENT_NAMES) == len(CLIENT_PROPORTIONS) == len(CLIENT_COSTS)
+for _i, _row in enumerate(CFG["clients"]["quartile_mix"]):
+    assert abs(sum(_row) - 1.0) < 1e-6, f"quartile_mix row {_i} must sum to 1"
