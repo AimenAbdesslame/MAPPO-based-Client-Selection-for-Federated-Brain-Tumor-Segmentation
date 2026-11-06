@@ -19,7 +19,7 @@ with open(PROJECT_ROOT / "configs" / "base.yaml") as f:
 # ==========================================
 def _path(env_var, key):
     val = (
-        os.environ.get(env_var)
+        (os.environ.get(env_var) if env_var else None)
         or CFG["environments"][ENV].get(key)
         or CFG["paths"].get(key)
     )
@@ -34,6 +34,7 @@ OUTPUT_DIR = _path("PROJECT_OUTPUT_DIR", "output_dir")
 NNUNET_RAW = _path("nnUNet_raw", "nnunet_raw")
 NNUNET_PREPROCESSED = _path("nnUNet_preprocessed", "nnunet_preprocessed")
 NNUNET_RESULTS = _path("nnUNet_results", "nnunet_results")
+HOLDOUT_DIR = _path(None, "holdout_dir")
 
 CHECKPOINT_DIR = OUTPUT_DIR / "checkpoints"
 FIGURES_DIR = OUTPUT_DIR / "figures"
@@ -43,7 +44,7 @@ PARTITION_DIR = OUTPUT_DIR / "partitions"
 RESULTS_DIR = OUTPUT_DIR / "results"
 
 for d in (CHECKPOINT_DIR, FIGURES_DIR, INIT_DIR, LOG_DIR, PARTITION_DIR, RESULTS_DIR,
-          NNUNET_RAW, NNUNET_PREPROCESSED, NNUNET_RESULTS):
+          NNUNET_RAW, NNUNET_PREPROCESSED, NNUNET_RESULTS, HOLDOUT_DIR):
     d.mkdir(parents=True, exist_ok=True)
 
 # nnU-Net reads these from os.environ

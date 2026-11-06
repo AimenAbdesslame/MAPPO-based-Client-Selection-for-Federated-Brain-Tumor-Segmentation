@@ -7,11 +7,10 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from configs.config import (DATASET_ID, DATASET_NAME, MODALITIES, NNUNET_RAW,
-                            PARTITION_DIR, require_data_dir)
+                            HOLDOUT_DIR, PARTITION_DIR, require_data_dir)
 from data.verify_dataset import index_tars
 
 DS_DIR = Path(NNUNET_RAW) / f"Dataset{DATASET_ID:03d}_{DATASET_NAME}"
-HOLDOUT_DIR = Path(NNUNET_RAW) / f"Dataset{DATASET_ID:03d}_{DATASET_NAME}_holdout"
 
 # modality name in the tar -> nnU-Net channel index (from base.yaml: FLAIR 0, T1 1, T1ce 2, T2 3)
 KIND_TO_CHANNEL = {"flair": MODALITIES["FLAIR"], "t1": MODALITIES["T1"],
