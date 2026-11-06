@@ -35,6 +35,7 @@ def build_trainer(batch_size: int) -> nnUNetTrainer:
     ds_json = json.loads(DS_JSON.read_text())
 
     plans["configurations"]["2d"]["batch_size"] = batch_size
+    plans["continue_training"] = False
 
     trainer = nnUNetTrainer(
         plans=plans,
