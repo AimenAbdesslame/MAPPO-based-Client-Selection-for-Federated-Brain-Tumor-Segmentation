@@ -1,2 +1,4 @@
 
-.outputs/
+outputs/*
+!outputs/partitions/
+!outputs/partitions/*.json
