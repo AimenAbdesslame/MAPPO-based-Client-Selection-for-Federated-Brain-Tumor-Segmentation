@@ -34,7 +34,7 @@ OUTPUT_DIR = _path("PROJECT_OUTPUT_DIR", "output_dir")
 NNUNET_RAW = _path("nnUNet_raw", "nnunet_raw")
 NNUNET_PREPROCESSED = _path("nnUNet_preprocessed", "nnunet_preprocessed")
 NNUNET_RESULTS = _path("nnUNet_results", "nnunet_results")
-HOLDOUT_DIR = _path(None, "holdout_dir")
+HOLDOUT_DIR = _path("PROJECT_HOLDOUT_DIR", "holdout_dir")
 
 CHECKPOINT_DIR = OUTPUT_DIR / "checkpoints"
 FIGURES_DIR = OUTPUT_DIR / "figures"

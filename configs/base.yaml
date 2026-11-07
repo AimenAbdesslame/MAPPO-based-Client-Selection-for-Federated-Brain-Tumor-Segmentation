@@ -23,7 +23,7 @@ environments:
     nnunet_raw: outputs/nnunet/nnUNet_raw
     nnunet_preprocessed: outputs/nnunet/nnUNet_preprocessed
     nnunet_results: outputs/nnunet/nnUNet_results
-    holdout_dir: outputs/holdout
+    holdout_dir: /kaggle/working/holdout
 
 # ── BraTS dataset metadata ──
 dataset:
